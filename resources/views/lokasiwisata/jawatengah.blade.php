@@ -33,21 +33,122 @@
         </div>
     </div>
 
-    
-    @foreach ($jawatengahs as $jawatengah)
-    <div class="relative pt-24 flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl">
-        <div class="w-full h-64 lg:w-1/2 lg:h-auto">
-            <img class="h-full w-full object-cover" src="{{ $jawatengah->image }}" alt="Winding mountain road">
-        </div>
-        <div class="max-w-lg bg-white md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12">
-            <div class="flex flex-col p-12 md:px-16">
-                <h2 class="text-2xl font-medium uppercase text-blue-600 lg:text-4xl">{{ $jawatengah->nama }}</h2>
-                <p class="mt-4">
-                    {{ $jawatengah->keterangan }}
-                </p>
+    <h1 class="flex text-blue-600 uppercase justify-center text-4xl font-semibold mt-28">
+        Top Destination
+      </h1>
+      <div class="flex justify-center space-x-4 mt-10">
+        <div class="card bg-base-100 w-96 shadow-xl">
+          <figure class="w-full h-64">
+            <img
+              src="https://lh6.googleusercontent.com/z7w08GWs9OsxMjN6-hY4BlVDlSmk6YdGoXQ_RPKrshNqWqEOcFLgHg23mpYr9CGEA9_X71wm064xrTzwrkoCM31_T0mEFhBYdQipVMzO128Qi9x86NYdcNnx9hSASNgUpHV8iaff"
+              alt="kota lama"
+              class="object-cover w-full h-full" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Kota Lama Semarang</h2>
+            <p>Kota Lama Semarang adalah suatu kawasan di Semarang yang menjadi pusat perdagangan pada abad 19–20 .</p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary" onclick="lama.showModal()">Selengkapnya</button>
             </div>
+          </div>
         </div>
-    </div>
+      
+        {{-- Modal Kota Lama --}}
+        <dialog id="lama" class="modal">
+          <div class="modal-box">
+            <form method="dialog">
+              <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </form>
+            <h3 class="text-lg font-bold">Kota Lama Semarang</h3>
+            <p class="py-4">
+                Kota Lama Semarang (bahasa Jawa: ꦑꦶꦛꦭꦩꦯꦼꦩꦫꦁ, translit. Kitha Lama Semarang, bahasa Belanda: Semarang Oude Stad) adalah suatu kawasan di Semarang yang menjadi pusat perdagangan pada abad 19–20 . Pada masa itu, untuk mengamankan warga dan wilayahnya, kawasan itu dibangun benteng, yang dinamai benteng Vijfhoek. Untuk mempercepat jalur perhubungan antar ketiga pintu gerbang di benteng itu maka dibuat jalan-jalan perhubungan, dengan jalan utamanya dinamai Heerenstraat. Saat ini bernama Jl. Letjen Soeprapto. Salah satu lokasi pintu benteng yang ada sampai saat ini adalah Jembatan Berok, yang disebut De Zuider Por. Kata 'Berok' sendiri merupakan hasil pelafalan masyarakat Pribumi yang kesulitan melafalkan kata 'Burg' dalam bahasa Belanda.
+                Di sekitar Kota Lama dibangun kanal-kanal air yang keberadaannya masih bisa disaksikan hingga kini meski tidak terawat. Hal inilah yang menyebabkan Kota Lama mendapat julukan sebagai "Little Netherland". Lokasinya yang terpisah dengan lanskap mirip kota di Eropa serta kanal yang mengelilinginya menjadikan Kota Lama seolah miniatur Belanda di Semarang.
+                Kawasan Kota Lama juga dilengkapi dengan Museum bernama Museum Kota Lama yang terletak di kawasan Jalan Cenderawasih, Semarang Tengah.
+            </p>
+          </div>
+        </dialog>
+        {{-- End --}}
+      
+        <div class="card bg-base-100 w-96 shadow-xl">
+          <figure class="w-full h-64">
+            <img
+              src="http://anekatempatwisata.com/wp-content/uploads/2014/07/Masjid-Agung-Jawa-Tengah.jpg"
+              alt="masjid agung"
+              class="object-cover w-full h-full" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Masjid Agung Jawa Tengah</h2>
+            <p>Masjid Agung Jawa Tengah adalah masjid yang terletak di Semarang, Jawa Tengah, Indonesia.
+              Masjid ini mulai dibangun sejak tahun 2001. </p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary" onclick="agung.showModal()">Selengkapnya</button>
+            </div>
+          </div>
+        </div>
+        {{-- Modal gamplong --}}
+        <dialog id="agung" class="modal">
+            <div class="modal-box">
+              <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+              </form>
+              <h3 class="text-lg font-bold">Masjid Agung Jawa Tengah</h3>
+              <p class="py-4">
+                Masjid Agung Jawa Tengah (bahasa Jawa: ꦩꦱ꧀ꦗꦶꦢ꧀ꦄꦒꦼꦁꦗꦮꦶꦩꦢꦾ, translit. Masjid Agêng Jawi Madya) adalah masjid yang terletak di Semarang, Jawa Tengah, Indonesia.
+                Masjid ini mulai dibangun sejak tahun 2001 hingga selesai secara keseluruhan pada tahun 2006. Masjid ini berdiri di atas lahan 10 hektare. Masjid Agung diresmikan oleh Presiden Susilo Bambang Yudhoyono pada tanggal 14 November 2006. Masjid Agung Jawa Tengah (MAJT) merupakan masjid provinsi bagi provinsi Jawa Tengah.
+              </p>
+            </div>
+          </dialog>
+          {{-- End --}}
+
+        <div class="card bg-base-100 w-96 shadow-xl">
+          <figure class="w-full h-64">
+            <img
+              src="http://benddac.com/wp-content/uploads/2020/01/Lokomotif-C2001-Museum-Kereta-Api-Ambarawa-Reza-Syahputra-scaled.jpg"
+              alt="k"
+              class="object-cover w-full h-full" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Museum Kereta Api Ambarawa</h2>
+            <p>Museum Kereta Api Ambarawa adalah bekas stasiun kereta api yang sudah dialihfungsikan menjadi sebuah museum serta merupakan museum perkeretaapian pertama di Indonesia.</p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary" onclick="api.showModal()">Selengkapnya</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        {{-- Modal Keraton --}}
+        <dialog id="api" class="modal">
+            <div class="modal-box">
+              <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+              </form>
+              <h3 class="text-lg font-bold">Museum Kereta Api Ambarawa</h3>
+              <p class="py-4">
+                Museum Kereta Api Ambarawa (bahasa Inggris: Indonesian Railway Museum, Ambarawa) adalah bekas stasiun kereta api yang sudah dialihfungsikan menjadi sebuah museum serta merupakan museum perkeretaapian pertama di Indonesia. Museum ini secara administratif terletak di Panjang, Ambarawa, Semarang; pada ketinggian +474,40 meter, termasuk dalam Daerah Operasi IV Semarang. Museum ini dikelola oleh KAI Wisata bekerja sama dengan Pemerintah Provinsi Jawa Tengah.
+              </p>
+            </div>
+          </dialog>
+          {{-- End --}}
+      
+    <h1 class="flex text-blue-600 uppercase justify-center text-4xl font-semibold mt-28">
+        Temukan Wisata Impian
+    </h1>
+
+
+    @foreach ($jawatengahs as $jawatengah)
+    <div class="container mx-auto py-10 px-6">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+              <div class="relative">
+                  <img class="w-full h-60 object-cover rounded-lg" src="{{ $jawatengah->image }}" alt="Yogyakarta">
+              </div>
+              <div class="p-4">
+                  <h3 class="text-xl mb-2 font-semibold">{{ $jawatengah->nama }}</h3>
+                  <p class="text-gray-700 text-base">{{ $jawatengah->keterangan }}</p>
+              </div>
+          </div>
+      </div>
+  </div>
     @endforeach
 </body>
 </html>

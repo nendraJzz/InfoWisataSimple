@@ -33,20 +33,124 @@
     </div>
 
     
-    @foreach ($yogyakartas as $yogyakarta)
-    <div class="relative pt-24 flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl">
-        <div class="w-full h-64 lg:w-1/2 lg:h-auto">
-            <img class="h-full w-full object-cover" src="{{ $yogyakarta->image }}" alt="Winding mountain road">
-        </div>
-        <div class="max-w-lg bg-white md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12">
-            <div class="flex flex-col p-12 md:px-16">
-                <h2 class="text-2xl font-medium uppercase text-blue-600 lg:text-4xl">{{ $yogyakarta->nama }}</h2>
-                <p class="mt-4">
-                    {{ $yogyakarta->keterangan }}
-                </p>
+    <h1 class="flex text-blue-600 uppercase justify-center text-4xl font-semibold mt-28">
+        Top Destination
+      </h1>
+      <div class="flex justify-center space-x-4 mt-10">
+        <div class="card bg-base-100 w-96 shadow-xl">
+          <figure class="w-full h-64">
+            <img
+              src="https://www.piknikdong.com/wp-content/uploads/2016/11/Malioboro-Jogja.jpg"
+              alt="malioboro"
+              class="object-cover w-full h-full" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Malioboro</h2>
+            <p>Jalan Malioboro adalah salah satu kawasan jalan dari tiga jalan di Kota Yogyakarta yang membentang dari Tugu Yogyakarta hingga ke persimpangan Titik Nol Kilometer Yogyakarta.</p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary" onclick="malioboro.showModal()">Selengkapnya</button>
             </div>
+          </div>
         </div>
-    </div>
+      
+        {{-- Modal Malioboro --}}
+        <dialog id="malioboro" class="modal">
+          <div class="modal-box">
+            <form method="dialog">
+              <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </form>
+            <h3 class="text-lg font-bold">Malioboro</h3>
+            <p class="py-4">
+                Jalan Malioboro (bahasa Jawa: ꦢꦭꦤ꧀ꦩꦭꦶꦪꦧꦫ, translit. Dalan Maliabara) adalah salah satu kawasan jalan dari tiga jalan di Kota Yogyakarta yang membentang dari Tugu Yogyakarta hingga ke persimpangan Titik Nol Kilometer Yogyakarta.
+                Secara keseluruhan, kawasan Malioboro terdiri atas Jalan Margo Utomo, Jalan Malioboro, dan Jalan Margo Mulyo.
+                Jalan ini menghubungkan Tugu Yogyakarta hingga menjelang kompleks Keraton Yogyakarta. Di sisi utara adalah Jalan Margo Utomo, yang terbentang dari selatan kawasan Tugu hingga sisi timur Stasiun Yogyakarta. Antara Jalan Margo Utomo dan Jalan Malioboro dipisahkan dengan perlintasan kereta api yang cukup unik, di mana perlintasan ini menggunakan palang pintu berjenis geser.
+            </p>
+          </div>
+        </dialog>
+        {{-- End --}}
+      
+        <div class="card bg-base-100 w-96 shadow-xl">
+          <figure class="w-full h-64">
+            <img
+              src="https://asset.kompas.com/crops/4mGaPX8LEpBNGka0xEFBpS4pbAE=/0x0:1800x1200/750x500/data/photo/2022/09/18/6326c44cda72b.jpg"
+              alt="studio alam gamplong"
+              class="object-cover w-full h-full" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Studio Alam Gamplong</h2>
+            <p>Gamplong Studio Alam Yogyakarta merupakan salah satu destinasi wisata di Provinsi Daerah Istimewa Yogyakarta (DIY).</p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary" onclick="gamplong.showModal()">Selengkapnya</button>
+            </div>
+          </div>
+        </div>
+        {{-- Modal gamplong --}}
+        <dialog id="gamplong" class="modal">
+            <div class="modal-box">
+              <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+              </form>
+              <h3 class="text-lg font-bold">Studio Alam Gamplong</h3>
+              <p class="py-4">
+                Gamplong Studio Alam Yogyakarta merupakan salah satu destinasi wisata di Provinsi Daerah Istimewa Yogyakarta (DIY). Desain bangunannya yang unik membuat studio alam ini dijuluki mini Hollywood yang cocok dijadikan spot fotografi.
+                Tempat ini merupakan lokasi syuting film yang dimiliki oleh sutradara film terkenal Indonesia, Hanung Bramantyo. Di sana, para wisatawan bisa berpura-pura menjadi seorang pemain film ternama yang sedang melakukan pengambilan gambar untuk film.
+              </p>
+            </div>
+          </dialog>
+          {{-- End --}}
+
+        <div class="card bg-base-100 w-96 shadow-xl">
+          <figure class="w-full h-64">
+            <img
+              src="https://anekatempatwisata.com/wp-content/uploads/2021/05/Keraton-Yogyakarta1.jpeg"
+              alt="keraton"
+              class="object-cover w-full h-full" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Keraton Yogyakarta</h2>
+            <p>Keraton Ngayogyakarta Hadiningrat atau Keraton Yogyakarta merupakan istana resmi Kesultanan Ngayogyakarta Hadiningrat yang kini berlokasi di Kota Yogyakarta.</p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary" onclick="keraton.showModal()">Selengkapnya</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        {{-- Modal Keraton --}}
+        <dialog id="keraton" class="modal">
+            <div class="modal-box">
+              <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+              </form>
+              <h3 class="text-lg font-bold">Keraton Yogyakarta</h3>
+              <p class="py-4">
+                Keraton Ngayogyakarta Hadiningrat atau Keraton Yogyakarta merupakan istana resmi Kesultanan Ngayogyakarta Hadiningrat yang kini berlokasi di Kota Yogyakarta. Keraton ini didirikan oleh Sri Sultan Hamengkubuwana I pada tahun 1755 sebagai Istana/Keraton Yogyakarta yang baru berdiri akibat perpecahan Mataram Islam dengan adanya Perjanjian Giyanti.
+                Keraton ini adalah pecahan dari Keraton Surakarta Hadiningrat dari Mataram Islam Surakarta (Kerajaan Surakarta). Sehingga dinasti Mataram diteruskan oleh 2 Kerajaan yakni Kesultanan Yogyakarta dan Kesunanan Surakarta. Total luas wilayah keseluruhan keraton yogyakarta mencapai 144 hektar, yakni meliputi seluruh area di dalam benteng Baluwarti, 
+                alun-alun Lor, alun-alun Kidul, gapura Gladak, dan kompleks Masjid Gedhe Yogyakarta. Sementara luas dari kedhaton (inti keraton) mencapai 13 hektar.
+              </p>
+            </div>
+          </dialog>
+          {{-- End --}}
+      
+    <h1 class="flex text-blue-600 uppercase justify-center text-4xl font-semibold mt-28">
+        Temukan Wisata Impian
+    </h1>
+
+
+
+    @foreach ($yogyakartas as $yogyakarta)
+    <div class="container mx-auto py-10 px-6">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+              <div class="relative">
+                  <img class="w-full h-60 object-cover rounded-lg" src="{{ $yogyakarta->image }}" alt="Yogyakarta">
+              </div>
+              <div class="p-4">
+                  <h3 class="text-xl mb-2 font-semibold">{{ $yogyakarta->nama }}</h3>
+                  <p class="text-gray-700 text-base">{{ $yogyakarta->keterangan }}</p>
+              </div>
+          </div>
+      </div>
+  </div>
     @endforeach
 </body>
 </html>

@@ -1,18 +1,19 @@
 <?php
 
+use App\Models\JawaBarat;
+use App\Models\JawaTimur;
+use App\Models\JawaTengah;
+use App\Models\JawaYogyakarta;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BantenController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\JakartaController;
-use App\Http\Controllers\JawaBaratController;
-use App\Http\Controllers\JawaTengahController;
-use App\Http\Controllers\JawaTimurController;
-use App\Http\Controllers\JawaYogyakartaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\JawaBaratController;
+use App\Http\Controllers\JawaTimurController;
+use App\Http\Controllers\JawaTengahController;
 use App\Http\Controllers\LokasiWisataController;
-use App\Models\JawaBarat;
-use App\Models\JawaTengah;
-use App\Models\JawaTimur;
-use App\Models\JawaYogyakarta;
+use App\Http\Controllers\JawaYogyakartaController;
 
 Route::get('/', function () {
     return view('landpage');
@@ -54,6 +55,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/addyogya', [JawaYogyakartaController::class, 'addyogya'])->name('addyogya');
     Route::post('/addjateng', [JawaTengahController::class, 'addjateng'])->name('addjateng');
     Route::post('/addjatim', [JawaTimurController::class, 'addjatim'])->name('addjatim');
+    // End
+
+    // Route Berita
+    Route::get('/dashboard/gunungtertinggidipulaujawa', [BeritaController::class, 'gunungtertinggidipulaujawa'])->name('gunungtertinggidipulaujawa');
+    Route::get('/dashboard/rekomendasihoteldijakarta', [BeritaController::class, 'rekomendasihoteldijakarta'])->name('rekomendasihoteldijakarta');
+    Route::get('/dashboard/rekomendasiwisatasaljudijakarta', [BeritaController::class, 'rekomendasiwisatasaljudijakarta'])->name('rekomendasiwisatasaljudijakarta');
+    Route::get('/dashboard/rekomendasipasarbunga', [BeritaController::class, 'rekomendasipasarbunga'])->name('rekomendasipasarbunga');
     // End
 });
 

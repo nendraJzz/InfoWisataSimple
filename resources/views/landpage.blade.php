@@ -15,12 +15,12 @@
                 <img src="https://2.bp.blogspot.com/-gkgmUYawUjc/W_5JkXuc0bI/AAAAAAAAQa8/omzPdqmKNPcSbVKOPlG1fKtsKT9sr272gCLcBGAs/s1600/WONDERFUL%2BINDONESIA.png" class="w-auto h-16" alt="">
             </a>
             <nav class="flex flex-wrap items-center mb-5 text-base md:mb-0 md:pl-8 md:ml-8 ">
-                <a href="{{ route('lokasiwisata.banten') }}" class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Banten</a>
-                <a href="{{ route('lokasiwisata.jawabarat') }}" class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Jawa Barat</a>
-                <a href="{{ route('lokasiwisata.jakarta') }}" class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">DKI Jakarta</a>
-                <a href="{{ route('lokasiwisata.yogyakarta') }}" class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">DI Yogyakarta</a>
-                <a href="{{ route('lokasiwisata.jawatengah') }}" class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Jawa Tengah</a>
-                <a href="{{ route('lokasiwisata.jawatimur') }}" class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Jawa Timur</a>
+                <a href="{{ route('lokasiwisata.banten') }}" class="mr-5 font-medium leading-6 hover:text-gray-600 text-gray-900">Banten</a>
+                <a href="{{ route('lokasiwisata.jawabarat') }}" class="mr-5 font-medium leading-6 hover:text-gray-600 text-gray-900">Jawa Barat</a>
+                <a href="{{ route('lokasiwisata.jakarta') }}" class="mr-5 font-medium leading-6 hover:text-gray-600 text-gray-900">DKI Jakarta</a>
+                <a href="{{ route('lokasiwisata.yogyakarta') }}" class="mr-5 font-medium leading-6 hover:text-gray-600 text-gray-900">DI Yogyakarta</a>
+                <a href="{{ route('lokasiwisata.jawatengah') }}" class="mr-5 font-medium leading-6 hover:text-gray-600 text-gray-900">Jawa Tengah</a>
+                <a href="{{ route('lokasiwisata.jawatimur') }}" class="mr-5 font-medium leading-6 hover:text-gray-600 text-gray-900">Jawa Timur</a>
             </nav>
         </div>
 
@@ -36,7 +36,7 @@
 </section>
 
 <!-- Content -->
-<section class="px-2 py-32 bg-white md:px-0">
+<section class="px-2 py-28 bg-white md:px-0">
   <div class="container items-center max-w-6xl px-8 mx-auto xl:px-5">
     <div class="flex flex-wrap items-center sm:-mx-3">
       <div class="w-full md:w-1/2 md:px-3">
@@ -63,8 +63,76 @@
   </div>
 </section>
 
-<h1 class="text-4xl ml-32 font-semibold">Destination Highlight</h1>
-<div class="flex flex-wrap justify-center gap-8 p-8">
+
+<div class="w-full py-10">
+  <div class="flex justify-between items-center space-x-6 px-10">
+      <img src="https://1.bp.blogspot.com/-gcPW4R5n3hs/YKzMAOc8bwI/AAAAAAAAFEA/9jH2ImUDmkATv85lfi5N_My63hJyQTxnQCLcBGAsYHQ/s1600/Logo%2BKAI%2B%2528Kereta%2BApi%2BIndonesia%2529.png" alt="Logo 2" class="h-14 w-48 object-contain ">
+      <img src="http://logos-download.com/wp-content/uploads/2016/08/Agoda_logo.png" alt="Logo 3" class="h-12 w-48 object-contain">
+      <img src="https://east.vc/wp-content/uploads/2019/04/traveloka.png" alt="Logo 1" class="h-32 w-48 object-contain">
+      <img src="https://1000logos.net/wp-content/uploads/2020/04/Garuda-Indonesia-Logo.png" alt="Logo 4" class="h-32 w-48 object-contain">
+      <img src="https://logos-download.com/wp-content/uploads/2018/03/Grab_logo_green.png" alt="Logo 5" class="h-12 w-48 object-contain">
+  </div>
+</div>
+
+<!-- Section: Mengapa Harus IndonesiaTravel -->
+<section class="py-16">
+    <div class="container max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-4xl font-extrabold text-gray-800">Mengapa Harus Indonesia Travel?</h2>
+        <p class="mt-4 text-lg text-gray-600 max-w-4xl mx-auto">
+          IndonesiaTravel adalah platform terbaik untuk menjelajahi keindahan Pulau Jawa. Kami bekerja sama dengan mitra-mitra terpercaya seperti Traveloka, Grab, Agoda, Garuda Indonesia, dan KAI untuk memberikan pengalaman wisata yang nyaman, aman, dan menyenangkan.
+        </p>
+      </div>
+  
+      <div class="mt-12 grid gap-8 grid-cols-1 md:grid-cols-3">
+        <!-- Card 1 -->
+        <div class="bg-blue-500 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <h3 class="text-2xl font-bold text-white">Kemudahan Akses</h3>
+          <p class="mt-3 text-blue-100">
+            Nikmati perjalanan yang mudah dengan dukungan dari Grab dan Garuda Indonesia untuk transportasi darat maupun udara, menjangkau berbagai destinasi wisata di seluruh Pulau Jawa.
+          </p>
+        </div>
+  
+        <!-- Card 2 -->
+        <div class="bg-green-500 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <h3 class="text-2xl font-bold text-white">Penginapan Terbaik</h3>
+          <p class="mt-3 text-green-100">
+            Temukan dan pesan penginapan berkualitas melalui Agoda dan Traveloka, dengan harga bersaing serta opsi yang sesuai kebutuhan Anda.
+          </p>
+        </div>
+  
+        <!-- Card 3 -->
+        <div class="bg-teal-500 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <h3 class="text-2xl font-bold text-white">Destinasi Wisata Unik</h3>
+          <p class="mt-3 text-teal-100">
+            Kami menyediakan rekomendasi wisata unik, tersembunyi, dan jarang dijelajahi, memastikan pengalaman baru di Pulau Jawa.
+          </p>
+        </div>
+      </div>
+  
+      <div class="mt-8 grid gap-8 grid-cols-1 md:grid-cols-2 justify-center">
+        <!-- Card 4 -->
+        <div class="bg-purple-500 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <h3 class="text-2xl font-bold text-white">Dukungan Pemerintah</h3>
+          <p class="mt-3 text-purple-100">
+            Bersama dengan kampanye Wonderful Indonesia, kami mendukung pariwisata lokal dan mempromosikan keindahan alam serta budaya.
+          </p>
+        </div>
+  
+        <!-- Card 5 -->
+        <div class="bg-red-500 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <h3 class="text-2xl font-bold text-white">One-stop Service</h3>
+          <p class="mt-3 text-red-100">
+            Semua kebutuhan wisata, mulai dari tiket, transportasi hingga akomodasi, tersedia di satu platform, membuat perencanaan perjalanan lebih mudah.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+<h1 class="text-4xl pt-10 ml-32 font-semibold">Destination Highlight</h1>
+<div class="flex flex-wrap justify-center pb-28 gap-8 p-8">
     <div class="relative w-56 h-56 bg-white shadow-lg rounded-lg overflow-hidden group">
         <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src="https://idetrips.com/wp-content/uploads/2018/07/Monas-jakarta-tourism-go-id.jpg" alt="Monas">
         <div class="absolute inset-0 transition-opacity duration-300 ease-in-out"></div>
@@ -123,26 +191,141 @@
     </div>
 </div>
 
-{{-- Footer --}}
-<footer class="mt-20 xl:mt-32 mx-auto w-full relative text-center bg-gray-600 text-white">
-    <div class="px-6 py-8 md:py-14 xl:pt-20 xl:pb-12">
-        <h2 class="font-bold text-3xl xl:text-4xl leading-snug">
-            Ingin menemukan destinasi wisata lebih banyak?<br>Login dan temukan wisata.
-        </h2>
-        <a class="mt-8 xl:mt-12 px-12 py-5 text-lg text-gray-600 font-medium leading-tight inline-block bg-white rounded-full shadow-xl border border-transparent hover:bg-gray-300 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-999 focus:ring-sky-500"
-            href="{{ route('register') }}">Get
-            started</a>
-        <div class="mt-14 xl:mt-20">
-            <nav class="flex flex-wrap justify-center text-lg font-medium">
-                <div class="px-5 py-2"><a href="#">Contact</a></div>
-                <div class="px-5 py-2"><a href="#">Pricing</a></div>
-                <div class="px-5 py-2"><a href="#">Privacy</a></div>
-                <div class="px-5 py-2"><a href="#">Terms</a></div>
-                <div class="px-5 py-2"><a href="#">Twitter</a></div>
-            </nav>
-            <p class="mt-7 text-base">© 2024 WONDERFUL INDONESIA.</p>
+<section class="py-10 bg-gray-50 sm:py-16 lg:py-24">
+  <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+      <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-3xl font-bold leading-tight text-gray-800 sm:text-4xl lg:text-5xl">
+              Frequently asked questions
+          </h2>
+      </div>
+      <div class="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16">
+          <div
+              class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+              <button type="button" id="question1" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                  <span class="flex text-lg font-semibold text-black">Bagaimana saya bisa memulai?</span>
+                  <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                      class="w-6 h-6 text-gray-400">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+              </button>
+              <div id="answer1" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                  <p>Memulai itu mudah! Daftar untuk membuat akun, dan Anda akan memiliki akses ke fitur-fitur platform kami.</p>
+              </div>
+          </div>
+          <div
+              class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+              <button type="button" id="question2" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                  <span class="flex text-lg font-semibold text-black">Bagaimana struktur harganya?</span>
+                  <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                      class="w-6 h-6 text-gray-400">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+              </button>
+              <div id="answer2" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                  <p>Struktur harga kami fleksibel. Kami menawarkan paket gratis dan berbayar. Anda dapat memilih paket yang sesuai dengan kebutuhan dan anggaran Anda.</p>
+              </div>
+          </div>
+          <div
+              class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+              <button type="button" id="question3" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                  <span class="flex text-lg font-semibold text-black">Dukungan seperti apa yang Anda berikan?</span>
+                  <svg id="arrow3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                      class="w-6 h-6 text-gray-400">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+              </button>
+              <div id="answer3" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                  <p>Kami menawarkan dukungan pelanggan yang komprehensif. Anda dapat menghubungi tim dukungan kami melalui berbagai saluran, termasuk email, obrolan, dan basis pengetahuan.</p>
+              </div>
+          </div>
+          <div
+              class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+              <button type="button" id="question4" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                  <span class="flex text-lg font-semibold text-black">Bisakah saya membatalkan langganan saya kapan saja?</span>
+                  <svg id="arrow4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                      class="w-6 h-6 text-gray-400">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+              </button>
+              <div id="answer4" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                  <p>Ya, Anda dapat membatalkan langganan Anda kapan saja tanpa biaya tersembunyi. Kami percaya dalam menyediakan pengalaman yang bebas hambatan bagi pengguna kami.</p>
+              </div>
+          </div>
+      </div>
+      <p class="text-center text-gray-600 textbase mt-9">
+          Masih ada pertanyaan? 
+          <span class="cursor-pointer font-medium text-tertiary transition-all duration-200 hover:text-tertiary focus:text-tertiary hover-underline">
+              Hubungi dukungan kami
+          </span>
+      </p>
+  </div>
+  <script>
+
+      document.querySelectorAll('[id^="question"]').forEach(function(button, index) {
+          button.addEventListener('click', function() {
+              var answer = document.getElementById('answer' + (index + 1));
+              var arrow = document.getElementById('arrow' + (index + 1));
+
+              if (answer.style.display === 'none' || answer.style.display === '') {
+                  answer.style.display = 'block';
+                  arrow.style.transform = 'rotate(0deg)';
+              } else {
+                  answer.style.display = 'none';
+                  arrow.style.transform = 'rotate(-180deg)';
+              }
+          });
+      });
+  </script>
+</section>
+
+
+
+<footer class="px-3 pt-4 lg:px-9 border-t-2 bg-gray-800">
+    <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+
+        <div class="sm:col-span-2">
+            <a href="#" class="inline-flex items-center">
+                <img src="http://2.bp.blogspot.com/-OYFAxi4ahu0/T_FhhawXm0I/AAAAAAAAAEk/tNjn-q8pZjM/w1200-h630-p-k-no-nu/Wonderful+Indonesia+Logo+White.png" alt="logo" class="h-8 w-16 pt-1">
+                <span class="ml-2 text-xl font-bold tracking-wide text-white">Indonesia Travel</span>
+            </a>
+            <div class="mt-6 lg:max-w-xl">
+                <p class="text-sm text-white">
+                    IndonesiaTravel adalah platform terbaik untuk menjelajahi keindahan Pulau Jawa. Kami bekerja sama dengan mitra-mitra terpercaya seperti Traveloka, Grab, Agoda, Garuda Indonesia, dan KAI untuk memberikan pengalaman wisata yang nyaman, aman, dan menyenangkan.
+                </p>
+            </div>
         </div>
+
+        <div class="flex flex-col gap-2 text-sm">
+            <p class="text-base font-bold tracking-wide text-white">Wisata Populer</p>
+            <a href="/dashboard/jakarta" class="text-white">DKI Jakarta</a>
+            <a href="/dashboard/yogyakarta" class="text-white">Yogyakarta</a>
+            <a href="/dashboard/jawatengah" class="text-white">Jawa Tengah</a>
+        </div>
+
+        <div>
+            <p class="text-base font-bold tracking-wide text-white mt-4">Contacts</p>
+            <div class="flex text-white">
+                <p class="mr-1 ">Email:</p>
+                <a href="#" title="send email">admin@indonesiatravel.com</a>
+            </div>
+        </div>
+
     </div>
+
+    <div class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
+        <p class="text-sm text-white">© Copyright 2024 Indonesia Travel. All rights reserved.</p>
+        <ul class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
+            <li>
+                <a href="#"
+                    class="text-sm text-white transition-colors duration-300 hover:text-deep-purple-accent-400">Privacy &amp; Cookies Policy</a>
+            </li>
+            <li>
+                <a href="#"
+                    class="text-sm text-white transition-colors duration-300 hover:text-deep-purple-accent-400">Disclaimer</a>
+            </li>
+        </ul>
+    </div>
+
 </footer>
 
 

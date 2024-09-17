@@ -33,21 +33,122 @@
         </div>
     </div>
 
-    
-    @foreach ($jakartas as $jakarta)
-    <div class="relative pt-24 flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl">
-        <div class="w-full h-64 lg:w-1/2 lg:h-auto">
-            <img class="h-full w-full object-cover" src="{{ $jakarta->image }}" alt="Winding mountain road">
-        </div>
-        <div class="max-w-lg bg-white md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12">
-            <div class="flex flex-col p-12 md:px-16">
-                <h2 class="text-2xl font-medium uppercase text-blue-600 lg:text-4xl">{{ $jakarta->nama }}</h2>
-                <p class="mt-4">
-                    {{ $jakarta->keterangan }}
-                </p>
+    <h1 class="flex text-blue-600 uppercase justify-center text-4xl font-semibold mt-28">
+        Top Destination
+      </h1>
+      <div class="flex justify-center space-x-4 mt-10">
+        <div class="card bg-base-100 w-96 shadow-xl">
+          <figure class="w-full h-64">
+            <img
+              src="https://anekatempatwisata.com/wp-content/uploads/2018/04/Taman-Mini-Indonesia-Indah.jpg"
+              alt="TMII"
+              class="object-cover w-full h-full" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Taman Mini Indonesia Indah</h2>
+            <p>Kaya akan pesona budaya, flora, dan fauna, Indonesia punya segudang cerita yang tak kunjung ada habisnya.</p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary" onclick="tmii.showModal()">Selengkapnya</button>
             </div>
+          </div>
         </div>
-    </div>
+      
+        {{-- Modal TMII --}}
+        <dialog id="tmii" class="modal">
+          <div class="modal-box">
+            <form method="dialog">
+              <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </form>
+            <h3 class="text-lg font-bold">Taman Mini Indonesia Indah</h3>
+            <p class="py-4">
+                Ribuan corak adat dan budaya melukis cerita di setiap sudut tanah air dari Sabang hingga Merauke, menghadirkan identitas sebagai citra setiap daerah di Nusantara. Ragamnya menginspirasi mantan Ibu Negara Siti Hartinah, atau yang akrab disapa Ibu Tien Soeharto, untuk menggagaskan pendirian Taman Mini Indonesia Indah atau TMII. 
+                Diawali dari impian seorang Ibu Negara yang ingin membawa rakyatnya menjelajah cerita Indonesia di satu taman terbuka, TMII lahir dan diresmikan pada April 1975 silam sebagai kawasan pelestarian dan pengembangan budaya bangsa. Keragaman 33 provinsi di Indonesia dikemas dalam bentuk miniatur kepulauan Nusantara, anjungan daerah, bangunan dan arsitektur tradisional, kesenian daerah, taman rekreasi, dan berbagai macam wahana. Lahan seluas 150 hektar disulap menjadi panggung seni, rekreasi, dan sarana edukasi bagi pengunjung dari berbagai rentang usia.
+                Sekian dekade berlalu hingga akhirnya pada 1 September 2023, TMII mempersembahkan wajah baru TMII yang inovatif dan revolusioner. #WajahBaruTMII mengusung empat pilar, yaitu green (hijau), inclusive (inklusif), culture (budaya), dan smart (pintar). Pilar green pada TMII menghadirkan eco-park yang 70 persen areanya adalah taman hijau yang minim emisi. Pilar inclusive mengikutsertakan semua lapisan masyarakat untuk berbagi dalam persembahan kebudayaan, sedangkan pilar culture menghadirkan destinasi wisata yang merangkum corak budaya dan seni serta menjadikan pengunjung pemeran utama dalam setiap kegiatan di TMII. Terakhir, pilar smart melengkapi wajah baru TMII melalui implementasi platform digital yang mudah dan praktis untuk eksplorasi TMII.
+            </p>
+          </div>
+        </dialog>
+        {{-- End --}}
+      
+        <div class="card bg-base-100 w-96 shadow-xl">
+          <figure class="w-full h-64">
+            <img
+              src="https://anekatempatwisata.com/wp-content/uploads/2021/03/Ancol.jpg"
+              alt="Ancol"
+              class="object-cover w-full h-full" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Pantai Ancol</h2>
+            <p>Pantai Ancol merupakan kawasan wisata yang di dalamnya terdapat area pantai.</p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary" onclick="ancol.showModal()">Selengkapnya</button>
+            </div>
+          </div>
+        </div>
+        {{-- Modal Ancol --}}
+        <dialog id="ancol" class="modal">
+            <div class="modal-box">
+              <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+              </form>
+              <h3 class="text-lg font-bold">Pantai Ancol</h3>
+              <p class="py-4">
+                Pantai Ancol merupakan kawasan wisata yang di dalamnya terdapat area pantai. Selama di sini kita dapat menikmati suasana segar Pantai Lagoon, Festival, Indah, Beach Pool dan Carnaval, serta Danau Impian. Berlibur di alam terbuka dipercaya memiliki efek menenangkan dan menyenangkan.
+                Panjang garis pantainya yang kurang lebih 6,5 km menjadi tempat berbagai aktivitas wisata. Wisata pantai ini merupakan BUMD penghasil Pendapatan Asli Daerah kedua terbesar bagi provinsi DKI Jakarta.
+              </p>
+            </div>
+          </dialog>
+          {{-- End --}}
+
+        <div class="card bg-base-100 w-96 shadow-xl">
+          <figure class="w-full h-64">
+            <img
+              src="https://i2.wp.com/travel-lush.com/wp-content/uploads/2015/03/Kota-Tua-1-of-1.jpg"
+              alt="kota tua"
+              class="object-cover w-full h-full" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Kota Tua Jakarta</h2>
+            <p>Kota Tua Jakarta, juga dikenal dengan sebutan Batavia Lama (Oud Batavia), adalah sebuah wilayah kecil di Jakarta, Indonesia. </p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary" onclick="kota.showModal()">Selengkapnya</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        {{-- Modal Kota Tua --}}
+        <dialog id="kota" class="modal">
+            <div class="modal-box">
+              <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+              </form>
+              <h3 class="text-lg font-bold">Kota Tua Jakarta</h3>
+              <p class="py-4">
+                Kota Tua Jakarta, juga dikenal dengan sebutan Batavia Lama (Oud Batavia), adalah sebuah wilayah kecil di Jakarta, Indonesia. Wilayah khusus ini memiliki luas 1,3 kilometer persegi melintasi Jakarta Utara dan Jakarta Barat (Pinangsia, Taman Sari dan Roa Malaka).
+                Dijuluki "Permata Asia" dan "Ratu dari Timur" pada abad ke-16 oleh pelayar Eropa, Jakarta Lama dianggap sebagai pusat perdagangan untuk benua Asia karena lokasinya yang strategis dan sumber daya melimpah.
+              </p>
+            </div>
+          </dialog>
+          {{-- End --}}
+      
+    <h1 class="flex text-blue-600 uppercase justify-center text-4xl font-semibold mt-28">
+        Temukan Wisata Impian
+    </h1>
+
+
+    @foreach ($jakartas as $jakarta)
+    <div class="container mx-auto py-10 px-6">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+              <div class="relative">
+                  <img class="w-full h-60 object-cover rounded-lg" src="{{ $jakarta->image }}" alt="Yogyakarta">
+              </div>
+              <div class="p-4">
+                  <h3 class="text-xl mb-2 font-semibold">{{ $jakarta->nama }}</h3>
+                  <p class="text-gray-700 text-base">{{ $jakarta->keterangan }}</p>
+              </div>
+          </div>
+      </div>
+  </div>
     @endforeach
 </body>
 </html>

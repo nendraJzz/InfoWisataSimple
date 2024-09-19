@@ -23,10 +23,10 @@
                 </p>
             </div>
             <div class="flex flex-col items-center justify-center gap-5 mt-6 md:flex-row">
-                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b hover:shadow-2xl"
+                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('dashboard') }}">Home
                 </a>
-                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b hover:shadow-2xl"
+                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('createwisata.tambahwisatajawabarat') }}">Tambah Wisata
                 </a>
             </div>
@@ -43,7 +43,7 @@
             <img
               src="https://cdn-cms.pgimgs.com/areainsider/2021/09/Alt-Text-Cerita-Dibalik-Megahnya-Masjid-Kubah-Emas-Depok.jpeg"
               alt="Masjid Kubah emas"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Masjid Kubah Emas</h2>
@@ -78,7 +78,7 @@
             <img
               src="https://2.bp.blogspot.com/-xIXUbI2wQ_s/VEiQaCZmtaI/AAAAAAAAAY8/7el6RujbRQY/s1600/Pesona%2BSamudera%2BIndonesia%2Bdi%2BPantai%2BHiu.JPG"
               alt="Pantai Batu Karas"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Pantai Batu Karas</h2>
@@ -110,7 +110,7 @@
             <img
               src="https://3.bp.blogspot.com/-xHRy7WexmpM/WhpbGSTI4KI/AAAAAAAABO0/PVbbuCDwrdg2g4gt31N7p_ZOQb_4Jcf7ACLcBGAs/s1600/harga%2Btiket%2Bmasuk%2Bgua%2Bsunyaragi%2Bcirebon.jpg"
               alt="Gua Sunyaragi"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Gua Sunyaragi</h2>
@@ -140,22 +140,20 @@
     <h1 class="flex text-blue-600 uppercase justify-center text-4xl font-semibold mt-28">
         Temukan Wisata Impian
     </h1>
-
-    
-    @foreach ($jawabarats as $jawabarat)
     <div class="container mx-auto py-10 px-6">
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
-              <div class="relative">
-                  <img class="w-full h-60 object-cover rounded-lg" src="{{ $jawabarat->image }}" alt="Yogyakarta">
-              </div>
-              <div class="p-4">
-                  <h3 class="text-xl mb-2 font-semibold">{{ $jawabarat->nama }}</h3>
-                  <p class="text-gray-700 text-base">{{ $jawabarat->keterangan }}</p>
-              </div>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        @foreach($jawabarats as $jawabarat)
+        <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+          <div class="relative">
+            <img class="w-full h-60 object-cover rounded-lg" src="{{ $jawabarat->image }}">
           </div>
+          <div class="p-4">
+            <h3 class="text-xl mb-2 font-semibold">{{ $jawabarat->nama }}</h3>
+            <p class="text-gray-700 text-base">{{ $jawabarat->keterangan }}</p>
+          </div>
+        </div>
+        @endforeach
       </div>
-  </div>
-    @endforeach
+    </div>
 </body>
 </html>

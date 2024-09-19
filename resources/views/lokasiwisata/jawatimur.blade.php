@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-100">
     
-    <div class="relative flex h-screen justify-center items-center bg-cover bg-center" style="background-image: url('https://sgp1.digitaloceanspaces.com/tz-mag-id/wp-content/uploads/2019/01/020201014646/10-1-GunungMasjid-By-farizal_hakim.jpg');">
+    <div class="relative flex h-screen justify-center items-center bg-cover bg-center" style="background-image: url('https://i.pinimg.com/originals/71/55/cf/7155cf739907b777edaf9a2bffd7acc4.jpg');">
 
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
@@ -22,10 +22,10 @@
                     Jawa Timur adalah salah satu provinsi paling bersejarah dan berpengaruh di Indonesia. Kekayaan budaya hingga sejarah panjang menjadikan Jawa Timur pusat peradaban dan perkembangan Indonesia selama berabad-abad.
             </div>
             <div class="flex flex-col items-center justify-center gap-5 mt-6 md:flex-row">
-                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b hover:shadow-2xl"
+                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('dashboard') }}">Home
                 </a>
-                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b hover:shadow-2xl"
+                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('createwisata.tambahwisatajawatimur') }}">Tambah Wisata
                 </a>
             </div>
@@ -41,7 +41,7 @@
             <img
               src="https://res-1.cloudinary.com/enchanting/f_auto/et-web/2016/07/43795460_L-1.jpg"
               alt="Gunung Bromo"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Gunung Bromo</h2>
@@ -73,7 +73,7 @@
             <img
               src="https://ksmtour.com/media/images/articles26/pantai-pasir-putih-situbondo.jpg"
               alt="pantai pasir putih"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Pantai Pasir Putih</h2>
@@ -105,7 +105,7 @@
             <img
               src="https://indonesiatraveler.id/wp-content/uploads/2020/07/Magetan-Telaga-Sarangan4-e1595905605934.jpeg"
               alt="k"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Telaga Sarangan</h2>
@@ -134,21 +134,20 @@
         Temukan Wisata Impian
     </h1>
 
-
-    @foreach ($jawatimurs as $jawatimur)
     <div class="container mx-auto py-10 px-6">
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
-              <div class="relative">
-                  <img class="w-full h-60 object-cover rounded-lg" src="{{ $jawatimur->image }}" alt="Yogyakarta">
-              </div>
-              <div class="p-4">
-                  <h3 class="text-xl mb-2 font-semibold">{{ $jawatimur->nama }}</h3>
-                  <p class="text-gray-700 text-base">{{ $jawatimur->keterangan }}</p>
-              </div>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        @foreach($jawatimurs as $jawatimur)
+        <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+          <div class="relative">
+            <img class="w-full h-60 object-cover rounded-lg" src="{{ $jawatimur->image }}">
           </div>
+          <div class="p-4">
+            <h3 class="text-xl mb-2 font-semibold">{{ $jawatimur->nama }}</h3>
+            <p class="text-gray-700 text-base">{{ $jawatimur->keterangan }}</p>
+          </div>
+        </div>
+        @endforeach
       </div>
-  </div>
-    @endforeach
+    </div>
 </body>
 </html>

@@ -22,14 +22,15 @@
                     Banten, sebagai provinsi yang relatif muda, terus berkembang dengan penuh semangat, memanfaatkan beragam potensi yang dimilikinya. 
                 </p>
             </div>
-            <div class="flex flex-col items-center justify-center gap-5 mt-6 md:flex-row">
-                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b hover:shadow-2xl"
-                    href="{{ route('dashboard') }}">Home
-                </a>
-                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b hover:shadow-2xl"
-                    href="{{ route('createwisata.tambahwisatabanten') }}">Tambah Wisata
-                </a>
-            </div>
+            <div class="flex flex-col items-center justify-center gap-5 mt-6 md:flex-row">                 
+              <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
+                  href="{{ route('dashboard') }}">Home
+              </a>
+              <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
+                  href="{{ route('createwisata.tambahwisatabanten') }}">Tambah Wisata
+              </a>
+          </div>
+          
         </div>
     </div>
 
@@ -42,7 +43,7 @@
             <img
               src="http://indonesia-tourism.com/blog/wp-content/uploads/2012/12/tanjung.jpg"
               alt="Tanjung Lesung"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Pantai Tanjung Lesung</h2>
@@ -75,7 +76,7 @@
             <img
               src="https://indonesiatraveler.id/wp-content/uploads/2020/06/Ujung-Kulon-Taman-Nasional-Ujung-Kulon.jpg"
               alt="Taman nasional ujung kulon"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Taman Nasional Ujung Kulon</h2>
@@ -108,7 +109,7 @@
             <img
               src="https://pergiyuk.com/wp-content/uploads/2020/11/Masjid-Agung-Banten.jpg"
               alt="Masjid agung banten"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Masjid Agung Banten</h2>
@@ -139,21 +140,22 @@
     <h1 class="flex text-blue-600 uppercase justify-center text-4xl font-semibold mt-28">
         Temukan Wisata Impian
     </h1>
-    @foreach ($bantens as $banten)
     <div class="container mx-auto py-10 px-6">
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
-              <div class="relative">
-                  <img class="w-full h-60 object-cover rounded-lg" src="{{ $banten->image }}" alt="Yogyakarta">
-              </div>
-              <div class="p-4">
-                  <h3 class="text-xl mb-2 font-semibold">{{ $banten->nama }}</h3>
-                  <p class="text-gray-700 text-base">{{ $banten->keterangan }}</p>
-              </div>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        @foreach($bantens as $banten)
+        <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+          <div class="relative">
+            <img class="w-full h-60 object-cover rounded-lg" src="{{ $banten->image }}">
           </div>
+          <div class="p-4">
+            <h3 class="text-xl mb-2 font-semibold">{{ $banten->nama }}</h3>
+            <p class="text-gray-700 text-base">{{ $banten->keterangan }}</p>
+          </div>
+        </div>
+        @endforeach
       </div>
-  </div>
-@endforeach
+    </div>
+    
 
 
 

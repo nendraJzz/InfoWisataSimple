@@ -22,10 +22,10 @@
                     Daerah Istimewa Yogyakarta adalah wilayah tertua kedua di Indonesia setelah Jawa Timur, yang dibentuk oleh pemerintah negara bagian Indonesia. 
             </div>
             <div class="flex flex-col items-center justify-center gap-5 mt-6 md:flex-row">
-                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b hover:shadow-2xl"
+                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('dashboard') }}">Home
                 </a>
-                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b hover:shadow-2xl"
+                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('createwisata.tambahwisatayogyakarta') }}">Tambah Wisata
                 </a>
             </div>
@@ -42,7 +42,7 @@
             <img
               src="https://www.piknikdong.com/wp-content/uploads/2016/11/Malioboro-Jogja.jpg"
               alt="malioboro"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Malioboro</h2>
@@ -74,7 +74,7 @@
             <img
               src="https://asset.kompas.com/crops/4mGaPX8LEpBNGka0xEFBpS4pbAE=/0x0:1800x1200/750x500/data/photo/2022/09/18/6326c44cda72b.jpg"
               alt="studio alam gamplong"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Studio Alam Gamplong</h2>
@@ -104,7 +104,7 @@
             <img
               src="https://anekatempatwisata.com/wp-content/uploads/2021/05/Keraton-Yogyakarta1.jpeg"
               alt="keraton"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Keraton Yogyakarta</h2>
@@ -135,22 +135,20 @@
         Temukan Wisata Impian
     </h1>
 
-
-
-    @foreach ($yogyakartas as $yogyakarta)
     <div class="container mx-auto py-10 px-6">
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
-              <div class="relative">
-                  <img class="w-full h-60 object-cover rounded-lg" src="{{ $yogyakarta->image }}" alt="Yogyakarta">
-              </div>
-              <div class="p-4">
-                  <h3 class="text-xl mb-2 font-semibold">{{ $yogyakarta->nama }}</h3>
-                  <p class="text-gray-700 text-base">{{ $yogyakarta->keterangan }}</p>
-              </div>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        @foreach($yogyakartas as $yogyakarta)
+        <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+          <div class="relative">
+            <img class="w-full h-60 object-cover rounded-lg" src="{{ $yogyakarta->image }}">
           </div>
+          <div class="p-4">
+            <h3 class="text-xl mb-2 font-semibold">{{ $yogyakarta->nama }}</h3>
+            <p class="text-gray-700 text-base">{{ $yogyakarta->keterangan }}</p>
+          </div>
+        </div>
+        @endforeach
       </div>
-  </div>
-    @endforeach
+    </div>
 </body>
 </html>

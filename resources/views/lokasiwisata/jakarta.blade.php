@@ -23,10 +23,10 @@
                 </p>
             </div>
             <div class="flex flex-col items-center justify-center gap-5 mt-6 md:flex-row">
-                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b hover:shadow-2xl"
+                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('dashboard') }}">Home
                 </a>
-                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b hover:shadow-2xl"
+                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('createwisata.tambahwisatajakarta') }}">Tambah Wisata
                 </a>
             </div>
@@ -42,7 +42,7 @@
             <img
               src="https://anekatempatwisata.com/wp-content/uploads/2018/04/Taman-Mini-Indonesia-Indah.jpg"
               alt="TMII"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Taman Mini Indonesia Indah</h2>
@@ -74,7 +74,7 @@
             <img
               src="https://anekatempatwisata.com/wp-content/uploads/2021/03/Ancol.jpg"
               alt="Ancol"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Pantai Ancol</h2>
@@ -104,7 +104,7 @@
             <img
               src="https://i2.wp.com/travel-lush.com/wp-content/uploads/2015/03/Kota-Tua-1-of-1.jpg"
               alt="kota tua"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Kota Tua Jakarta</h2>
@@ -134,21 +134,20 @@
         Temukan Wisata Impian
     </h1>
 
-
-    @foreach ($jakartas as $jakarta)
     <div class="container mx-auto py-10 px-6">
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
-              <div class="relative">
-                  <img class="w-full h-60 object-cover rounded-lg" src="{{ $jakarta->image }}" alt="Yogyakarta">
-              </div>
-              <div class="p-4">
-                  <h3 class="text-xl mb-2 font-semibold">{{ $jakarta->nama }}</h3>
-                  <p class="text-gray-700 text-base">{{ $jakarta->keterangan }}</p>
-              </div>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        @foreach($jakartas as $jakarta)
+        <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+          <div class="relative">
+            <img class="w-full h-60 object-cover rounded-lg" src="{{ $jakarta->image }}">
           </div>
+          <div class="p-4">
+            <h3 class="text-xl mb-2 font-semibold">{{ $jakarta->nama }}</h3>
+            <p class="text-gray-700 text-base">{{ $jakarta->keterangan }}</p>
+          </div>
+        </div>
+        @endforeach
       </div>
-  </div>
-    @endforeach
+    </div>
 </body>
 </html>

@@ -23,10 +23,10 @@
                 </p>
             </div>
             <div class="flex flex-col items-center justify-center gap-5 mt-6 md:flex-row">
-                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b hover:shadow-2xl"
+                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('dashboard') }}">Home
                 </a>
-                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b hover:shadow-2xl"
+                <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('createwisata.tambahwisatajawatengah') }}">Tambah Wisata
                 </a>
             </div>
@@ -42,7 +42,7 @@
             <img
               src="https://lh6.googleusercontent.com/z7w08GWs9OsxMjN6-hY4BlVDlSmk6YdGoXQ_RPKrshNqWqEOcFLgHg23mpYr9CGEA9_X71wm064xrTzwrkoCM31_T0mEFhBYdQipVMzO128Qi9x86NYdcNnx9hSASNgUpHV8iaff"
               alt="kota lama"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Kota Lama Semarang</h2>
@@ -74,7 +74,7 @@
             <img
               src="http://anekatempatwisata.com/wp-content/uploads/2014/07/Masjid-Agung-Jawa-Tengah.jpg"
               alt="masjid agung"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Masjid Agung Jawa Tengah</h2>
@@ -105,7 +105,7 @@
             <img
               src="http://benddac.com/wp-content/uploads/2020/01/Lokomotif-C2001-Museum-Kereta-Api-Ambarawa-Reza-Syahputra-scaled.jpg"
               alt="k"
-              class="object-cover w-full h-full" />
+              class="object-cover w-full h-full rounded-lg" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Museum Kereta Api Ambarawa</h2>
@@ -134,21 +134,20 @@
         Temukan Wisata Impian
     </h1>
 
-
-    @foreach ($jawatengahs as $jawatengah)
     <div class="container mx-auto py-10 px-6">
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
-              <div class="relative">
-                  <img class="w-full h-60 object-cover rounded-lg" src="{{ $jawatengah->image }}" alt="Yogyakarta">
-              </div>
-              <div class="p-4">
-                  <h3 class="text-xl mb-2 font-semibold">{{ $jawatengah->nama }}</h3>
-                  <p class="text-gray-700 text-base">{{ $jawatengah->keterangan }}</p>
-              </div>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        @foreach($jawatengahs as $jawatengah)
+        <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+          <div class="relative">
+            <img class="w-full h-60 object-cover rounded-lg" src="{{ $jawatengah->image }}">
           </div>
+          <div class="p-4">
+            <h3 class="text-xl mb-2 font-semibold">{{ $jawatengah->nama }}</h3>
+            <p class="text-gray-700 text-base">{{ $jawatengah->keterangan }}</p>
+          </div>
+        </div>
+        @endforeach
       </div>
-  </div>
-    @endforeach
+    </div>
 </body>
 </html>

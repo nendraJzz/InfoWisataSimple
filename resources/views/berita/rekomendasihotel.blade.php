@@ -12,7 +12,7 @@
         <article class="overflow-hidden max-w-3xl mx-auto">
             <header class="p-6">
                 <h1 class="text-4xl font-bold text-center mb-4">Rekomendasi 5 Hotel Terbaik Di Jakarta.</h1>
-                <p class="text-sm text-gray-500 text-center">Ditulis oleh Danendra | 13 September 2024</p>
+                <p class="text-sm text-gray-500 text-center">Ditulis oleh Wisnu | 17 September 2024</p>
             </header>
 
             <section class="px-6 pb-6 leading-relaxed text-lg text-gray-900">

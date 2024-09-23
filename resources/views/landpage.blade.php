@@ -215,14 +215,14 @@
           <div
               class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
               <button type="button" id="question2" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
-                  <span class="flex text-lg font-semibold text-black">Bagaimana struktur harganya?</span>
+                  <span class="flex text-lg font-semibold text-black">Bagaimana cara mencari tempat wisata di website ini?</span>
                   <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                       class="w-6 h-6 text-gray-400">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
               </button>
               <div id="answer2" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
-                  <p>Struktur harga kami fleksibel. Kami menawarkan paket gratis dan berbayar. Anda dapat memilih paket yang sesuai dengan kebutuhan dan anggaran Anda.</p>
+                  <p>Anda bisa menggunakan fitur pencarian di halaman utama untuk mencari tempat wisata berdasarkan nama, lokasi, atau kategori wisata.</p>
               </div>
           </div>
           <div
@@ -241,14 +241,14 @@
           <div
               class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
               <button type="button" id="question4" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
-                  <span class="flex text-lg font-semibold text-black">Bisakah saya membatalkan langganan saya kapan saja?</span>
+                  <span class="flex text-lg font-semibold text-black">Apakah ada biaya untuk mengakses informasi di website ini?</span>
                   <svg id="arrow4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                       class="w-6 h-6 text-gray-400">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
               </button>
               <div id="answer4" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
-                  <p>Ya, Anda dapat membatalkan langganan Anda kapan saja tanpa biaya tersembunyi. Kami percaya dalam menyediakan pengalaman yang bebas hambatan bagi pengguna kami.</p>
+                  <p>Tidak, semua informasi yang tersedia di website ini bisa diakses secara gratis.</p>
               </div>
           </div>
       </div>

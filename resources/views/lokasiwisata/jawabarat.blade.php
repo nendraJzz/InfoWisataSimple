@@ -140,20 +140,85 @@
     <h1 class="flex text-blue-600 uppercase justify-center text-4xl font-semibold mt-28">
         Temukan Wisata Impian
     </h1>
-    <div class="container mx-auto py-10 px-6">
-      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-        @foreach($jawabarats as $jawabarat)
-        <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
-          <div class="relative">
-            <img class="w-full h-60 object-cover rounded-lg" src="{{ $jawabarat->image }}">
+
+    <div class="flex justify-center mt-10">
+      <form id="searchForm" class="flex items-center w-full max-w-lg">
+          <input 
+              type="text" 
+              name="search" 
+              id="searchInput"
+              placeholder="Cari wisata..." 
+              value="{{ request('search') }}" 
+              class="border border-gray-300 rounded-md py-2 px-4 w-full"
+          >
+          <button 
+              type="submit" 
+              class="ml-2 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">
+              Cari
+          </button>
+      </form>
+  </div>
+  
+  <div class="container mx-auto py-10 px-6">
+      <div id="searchResults" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          @foreach($jawabarats as $jawabarat)
+          <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+              <div class="relative">
+                  <img class="w-full h-60 object-cover rounded-lg" src="{{ $jawabarat->image }}">
+              </div>
+              <div class="p-4">
+                  <h3 class="text-xl mb-2 font-semibold">{{ $jawabarat->nama }}</h3>
+                  <p class="text-gray-700 text-base">{{ $jawabarat->keterangan }}</p>
+              </div>
           </div>
-          <div class="p-4">
-            <h3 class="text-xl mb-2 font-semibold">{{ $jawabarat->nama }}</h3>
-            <p class="text-gray-700 text-base">{{ $jawabarat->keterangan }}</p>
-          </div>
-        </div>
-        @endforeach
+          @endforeach
       </div>
-    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          $('#searchForm').on('submit', function(e) {
+              e.preventDefault();  // Mencegah refresh halaman
+  
+              var searchQuery = $('#searchInput').val(); // Ambil nilai input pencarian
+  
+              // Kirim request AJAX
+              $.ajax({
+                  url: "{{ route('lokasiwisata.jawabarat') }}", // Ganti dengan route yang sesuai
+                  method: "GET",
+                  data: { search: searchQuery },
+                  success: function(response) {
+                      // Kosongkan elemen hasil pencarian
+                      $('#searchResults').empty();
+  
+                      // Jika ada data yang ditemukan
+                      if (response.jawabarats && response.jawabarats.length > 0) {
+                          response.jawabarats.forEach(function(jawabarat) {
+                              $('#searchResults').append(`
+                                  <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+                                      <div class="relative">
+                                          <img class="w-full h-60 object-cover rounded-lg" src="${jawabarat.image}">
+                                      </div>
+                                      <div class="p-4">
+                                          <h3 class="text-xl mb-2 font-semibold">${jawabarat.nama}</h3>
+                                          <p class="text-gray-700 text-base">${jawabarat.keterangan}</p>
+                                      </div>
+                                  </div>
+                              `);
+                          });
+                      } else {
+                          $('#searchResults').append('<p class="text-gray-600">Tidak ada wisata yang ditemukan.</p>');
+                      }
+                  },
+                  error: function() {
+                      // Jika ada kesalahan dalam request
+                      $('#searchResults').append('<p class="text-red-600">Terjadi kesalahan dalam proses pencarian.</p>');
+                  }
+              });
+          });
+      });
+  </script>
+  
 </body>
 </html>

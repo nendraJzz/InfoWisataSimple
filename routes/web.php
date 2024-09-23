@@ -63,6 +63,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/rekomendasiwisatasaljudijakarta', [BeritaController::class, 'rekomendasiwisatasaljudijakarta'])->name('rekomendasiwisatasaljudijakarta');
     Route::get('/dashboard/rekomendasipasarbunga', [BeritaController::class, 'rekomendasipasarbunga'])->name('rekomendasipasarbunga');
     // End
+
+
+
+
+
 });
 
 require __DIR__.'/auth.php';

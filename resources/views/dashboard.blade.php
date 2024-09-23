@@ -46,9 +46,9 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <li class="mr-3">
-                                <a class="inline-block py-2 px-4 cursor-pointer bg-blue-600 rounded-md text-white hover:text-gray-200" :href="route('logout')"
+                                <a class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600" :href="route('logout')"
                                     onclick="event.preventDefault(); this.closest('form').submit();">
-                                Logout</a>
+                                Sign Out</a>
                             </li>
                         </form>
                     </ul>
@@ -205,7 +205,7 @@
     </div>
 
     <h1 class="flex text-gray-800 ml-7 text-2xl font-semibold mt-9">
-        Read on and kickstart your adventure
+        Travel news that you must read
     </h1>
 
     <div class="container mx-auto py-5 px-6">

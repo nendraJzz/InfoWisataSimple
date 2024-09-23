@@ -137,25 +137,87 @@
           </dialog>
           {{-- End --}}
       
-    <h1 class="flex text-blue-600 uppercase justify-center text-4xl font-semibold mt-28">
-        Temukan Wisata Impian
-    </h1>
-    <div class="container mx-auto py-10 px-6">
-      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-        @foreach($bantens as $banten)
-        <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
-          <div class="relative">
-            <img class="w-full h-60 object-cover rounded-lg" src="{{ $banten->image }}">
-          </div>
-          <div class="p-4">
-            <h3 class="text-xl mb-2 font-semibold">{{ $banten->nama }}</h3>
-            <p class="text-gray-700 text-base">{{ $banten->keterangan }}</p>
-          </div>
-        </div>
-        @endforeach
+          <h1 class="flex text-blue-600 uppercase justify-center text-4xl font-semibold mt-28">
+            Temukan Wisata Impian
+        </h1>
+        <div class="flex justify-center mt-10">
+          <form id="searchForm" class="flex items-center w-full max-w-lg">
+              <input 
+                  type="text" 
+                  name="search" 
+                  id="searchInput"
+                  placeholder="Cari wisata..." 
+                  class="border border-gray-300 rounded-md py-2 px-4 w-full"
+              >
+              <button 
+                  type="submit" 
+                  class="ml-2 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">
+                  Cari
+              </button>
+          </form>
       </div>
-    </div>
-    
+      
+      <div class="container mx-auto py-10 px-6">
+          <div id="searchResults" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+              @forelse($bantens as $banten)
+              <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+                  <div class="relative">
+                      <img class="w-full h-60 object-cover rounded-lg" src="{{ $banten->image }}">
+                  </div>
+                  <div class="p-4">
+                      <h3 class="text-xl mb-2 font-semibold">{{ $banten->nama }}</h3>
+                      <p class="text-gray-700 text-base">{{ $banten->keterangan }}</p>
+                  </div>
+              </div>
+              @empty
+                  <p class="text-gray-600">Tidak ada wisata yang ditemukan.</p>
+              @endforelse
+          </div>
+      </div>
+      
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+          $(document).ready(function() {
+              $('#searchForm').on('submit', function(e) {
+                  e.preventDefault();  // Mencegah reload halaman
+      
+                  var searchQuery = $('#searchInput').val(); 
+      
+                  $.ajax({
+                      url: "{{ route('lokasiwisata.banten') }}",
+                      method: "GET",
+                      dataType: 'json', // Pastikan response berformat JSON
+                      data: { search: searchQuery },
+                      success: function(response) {
+                          // Kosongkan hasil pencarian sebelumnya
+                          $('#searchResults').empty();
+      
+                          // Jika ada data wisata
+                          if (response.bantens.length > 0) {
+                              response.bantens.forEach(function(banten) {
+                                  $('#searchResults').append(`
+                                      <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+                                          <div class="relative">
+                                              <img class="w-full h-60 object-cover rounded-lg" src="${banten.image}">
+                                          </div>
+                                          <div class="p-4">
+                                              <h3 class="text-xl mb-2 font-semibold">${banten.nama}</h3>
+                                              <p class="text-gray-700 text-base">${banten.keterangan}</p>
+                                          </div>
+                                      </div>
+                                  `);
+                              });
+                          } else {
+                              // Jika tidak ada data yang ditemukan
+                              $('#searchResults').append('<p class="text-gray-600">Tidak ada wisata yang ditemukan.</p>');
+                          }
+                      }
+                  });
+              });
+          });
+      </script>
+      
+        
 
 
 

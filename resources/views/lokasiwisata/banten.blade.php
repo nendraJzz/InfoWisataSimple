@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite('resources/css/app.css')
   <title>Indonesia Travel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-poppins">
     
     <div class="relative flex h-screen justify-center items-center bg-cover bg-center" style="background-image: url('http://4.bp.blogspot.com/-8AUO702HkVU/ViMRoAF7upI/AAAAAAAAAaQ/zToFJbZEf78/s1600/anyer1.JPG');">
 
@@ -18,7 +19,7 @@
                 Banten
             </h1>
             <div>
-                <p class="max-w-2xl mx-auto my-2 text-base text-white md:leading-relaxed md:text-xl">
+                <p class="max-w-2xl mx-auto my-2 text-base text-white md:leading-relaxed md:text-lg">
                     Banten, sebagai provinsi yang relatif muda, terus berkembang dengan penuh semangat, memanfaatkan beragam potensi yang dimilikinya. 
                 </p>
             </div>
@@ -26,9 +27,11 @@
               <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                   href="{{ route('dashboard') }}">Home
               </a>
+              @if (Auth::user()->role == 'admin')
               <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                   href="{{ route('createwisata.tambahwisatabanten') }}">Tambah Wisata
               </a>
+              @endif
           </div>
           
         </div>
@@ -160,13 +163,15 @@
       <div class="container mx-auto py-10 px-6">
           <div id="searchResults" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
               @forelse($bantens as $banten)
-              <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+              <div class="max-w-xs mx-auto bg-white shadow-lg overflow-hidden rounded-lg">
                   <div class="relative">
                       <img class="w-full h-60 object-cover rounded-lg" src="{{ $banten->image }}">
                   </div>
                   <div class="p-4">
                       <h3 class="text-xl mb-2 font-semibold">{{ $banten->nama }}</h3>
                       <p class="text-gray-700 text-base">{{ $banten->keterangan }}</p>
+                      <p class="text-gray-700 mt-4 text-base">{{ $banten->rating }}</p>
+                      <p class="text-gray-700 text-sm">*Places to visit: {{ $banten->lokasi }}</p>
                   </div>
               </div>
               @empty
@@ -196,13 +201,16 @@
                           if (response.bantens.length > 0) {
                               response.bantens.forEach(function(banten) {
                                   $('#searchResults').append(`
-                                      <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+                                      <div class="max-w-xs mx-auto bg-white shadow-lg overflow-hidden rounded-lg">
                                           <div class="relative">
                                               <img class="w-full h-60 object-cover rounded-lg" src="${banten.image}">
                                           </div>
                                           <div class="p-4">
                                               <h3 class="text-xl mb-2 font-semibold">${banten.nama}</h3>
                                               <p class="text-gray-700 text-base">${banten.keterangan}</p>
+                                              <p class="text-gray-700 mt-4 text-base">${banten.rating}</p>
+                                              <p class="text-gray-700 text-sm">*Places to visit: ${banten.lokasi}</p>
+                                              
                                           </div>
                                       </div>
                                   `);

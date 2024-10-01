@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite('resources/css/app.css')
   <title>Indonesia Travel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-poppins">
     
     <div class="relative flex h-screen justify-center items-center bg-cover bg-center" style="background-image: url('https://lh5.googleusercontent.com/RgSqBRXcwDoO430k1_etWmias7Z47ztXmtkYRQQrrCUSaZJnj0CKHa2qkSKwdZWCtrQCNMgog1eZ_T_quI_RCw0GZkoEq27tpBtKhXcUxn9xSR8ErqMWcfz6IR3LPTIC5rKcxQJK');">
 
@@ -18,7 +19,7 @@
                 Jawa Tengah
             </h1>
             <div>
-                <p class="max-w-2xl mx-auto my-2 text-base text-white md:leading-relaxed md:text-xl">
+                <p class="max-w-2xl mx-auto my-2 text-base text-white md:leading-relaxed md:text-lg">
                     Jawa Tengah adalah sebuah wilayah provinsi di Indonesia yang terletak di bagian tengah Pulau Jawa. Ibu kota Provinsi Jawa Tengah berada di Kota Semarang.
                 </p>
             </div>
@@ -26,9 +27,11 @@
                 <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('dashboard') }}">Home
                 </a>
+                @if (Auth::user()->role == 'admin')
                 <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('createwisata.tambahwisatajawatengah') }}">Tambah Wisata
                 </a>
+                @endif
             </div>
         </div>
     </div>
@@ -153,7 +156,7 @@
   
   <div class="container mx-auto py-10 px-6">
       <div id="searchResults" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          @foreach($jawatengahs as $jawatengah)
+          @forelse($jawatengahs as $jawatengah)
           <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
               <div class="relative">
                   <img class="w-full h-60 object-cover rounded-lg" src="{{ $jawatengah->image }}">
@@ -163,7 +166,9 @@
                   <p class="text-gray-700 text-base">{{ $jawatengah->keterangan }}</p>
               </div>
           </div>
-          @endforeach
+          @empty
+          <p class="text-gray-600">Tidak ada wisata yang ditemukan.</p>
+          @endforelse
       </div>
   </div>
   

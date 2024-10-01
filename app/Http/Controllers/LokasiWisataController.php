@@ -10,6 +10,7 @@ use App\Models\JawaTimur;
 use App\Models\JawaYogyakarta;
 use Illuminate\Http\Request;
 
+
 class LokasiWisataController extends Controller
 {
     public function banten(Request $request) {
@@ -28,6 +29,7 @@ class LokasiWisataController extends Controller
     
         return view('lokasiwisata.banten', compact('bantens', 'search'));
     }
+    
     
     
     public function jawabarat(Request $request) {

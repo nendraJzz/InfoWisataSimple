@@ -12,6 +12,8 @@ class BantenController extends Controller
         $request->validate([
             'nama' => ['required'],
             'keterangan' => ['required'],
+            'rating' => ['required'],
+            'lokasi' => ['required'],
             'image' => ['required'],
         ]);
 
@@ -20,6 +22,8 @@ class BantenController extends Controller
         Banten::create([
             'user_id' => Auth::id(),
             'nama' => $request->nama,
+            'rating' => $request->rating,
+            'lokasi' => $request->lokasi,
             'keterangan' => $request->keterangan,
             'image' => $imagePath
         ]);

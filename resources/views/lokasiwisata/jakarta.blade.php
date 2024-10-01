@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite('resources/css/app.css')
   <title>Indonesia Travel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-poppins">
     
     <div class="relative flex h-screen justify-center items-center bg-cover bg-center" style="background-image: url('https://7bd86aba206a59981820-a1471e32c826f82a376e3a3b16604284.ssl.cf6.rackcdn.com/2015/07/monas.jpg');">
 
@@ -18,7 +19,7 @@
                 Jakarta
             </h1>
             <div>
-                <p class="max-w-2xl mx-auto my-2 text-base text-white md:leading-relaxed md:text-xl">
+                <p class="max-w-2xl mx-auto my-2 text-base text-white md:leading-relaxed md:text-lg">
                     Jakarta indonesia adalah ibu kota dan kota terbesar Indonesia. Terletak di estuari Sungai Ciliwung, di bagian barat laut Jawa, daerah ini telah lama menopang pemukiman manusia. 
                 </p>
             </div>
@@ -26,9 +27,11 @@
                 <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('dashboard') }}">Home
                 </a>
+                @if (Auth::user()->role == 'admin')
                 <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('createwisata.tambahwisatajakarta') }}">Tambah Wisata
                 </a>
+                @endif
             </div>
         </div>
     </div>

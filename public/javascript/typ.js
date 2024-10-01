@@ -1,42 +1,42 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const textArray = ["Indonesia Travel", "Wonderful Indonesia", "Destinasi Wisata"];
-    const typingElement = document.getElementById('auto-typing');
-    let arrayIndex = 0;
-    let charIndex = 0;
-    let currentText = '';
-    let isDeleting = false;
+function createSlider(sliderId, prevBtnId, nextBtnId) {
+    const slider = document.getElementById(sliderId);
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
+    const slides = slider.children;
+    let currentIndex = 0;
 
-    function type() {
-        if (arrayIndex < textArray.length) {
-            if (!isDeleting && charIndex <= textArray[arrayIndex].length) {
-                currentText = textArray[arrayIndex].substring(0, charIndex);
-                charIndex++;
-                typingElement.innerHTML = currentText;
-            } else if (isDeleting && charIndex >= 0) {
-                currentText = textArray[arrayIndex].substring(0, charIndex);
-                charIndex--;
-                typingElement.innerHTML = currentText;
-            }
-
-            if (charIndex > textArray[arrayIndex].length && !isDeleting) {
-                isDeleting = true;
-                setTimeout(type, 2000);  // Pause before deleting
-            } else if (isDeleting && charIndex < 0) {
-                isDeleting = false;
-                arrayIndex = (arrayIndex + 1) % textArray.length;
-                setTimeout(type, 500);  // Pause before typing next word
-            } else {
-                setTimeout(type, isDeleting ? 50 : 100);
-            }
-        } else {
-            arrayIndex = 0;
-            type();  // Restart typing effect
-        }
+    function getVisibleSlides() {
+        if (window.innerWidth >= 1024) return 4; // lg
+        if (window.innerWidth >= 768) return 2; // md
+        return 1; // sm
     }
 
-    type();
-});
+    function updateSlider() {
+        const visibleSlides = getVisibleSlides();
+        const slideWidth = slider.clientWidth / visibleSlides;
+        slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
 
+    function showPrevSlide() {
+        const visibleSlides = getVisibleSlides();
+        currentIndex = Math.max(currentIndex - visibleSlides, 0);
+        updateSlider();
+    }
 
+    function showNextSlide() {
+        const visibleSlides = getVisibleSlides();
+        currentIndex = Math.min(currentIndex + visibleSlides, slides.length - visibleSlides);
+        updateSlider();
+    }
 
+    prevBtn.addEventListener('click', showPrevSlide);
+    nextBtn.addEventListener('click', showNextSlide);
 
+    window.addEventListener('resize', updateSlider);
+    updateSlider();
+}
+
+// Initialize sliders
+createSlider('flightSlider', 'flightPrevBtn', 'flightNextBtn');
+createSlider('villaSlider', 'villaPrevBtn', 'villaNextBtn');
+createSlider('newsSlider', 'newsPrevBtn', 'newsNextBtn');

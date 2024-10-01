@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite('resources/css/app.css')
   <title>Indonesia Travel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-poppins">
     
     <div class="relative flex h-screen justify-center items-center bg-cover bg-center" style="background-image: url('https://i.pinimg.com/originals/71/55/cf/7155cf739907b777edaf9a2bffd7acc4.jpg');">
 
@@ -18,16 +19,18 @@
                 Jawa Timur
             </h1>
             <div>
-                <p class="max-w-2xl mx-auto my-2 text-base text-white md:leading-relaxed md:text-xl">
-                    Jawa Timur adalah salah satu provinsi paling bersejarah dan berpengaruh di Indonesia. Kekayaan budaya hingga sejarah panjang menjadikan Jawa Timur pusat peradaban dan perkembangan Indonesia selama berabad-abad.
+                <p class="max-w-2xl mx-auto my-2 text-base text-white md:leading-relaxed md:text-lg">
+                    Jawa Timur adalah salah satu provinsi paling bersejarah dan berpengaruh di Indonesia. Kekayaan budaya hingga sejarah panjang menjadikan Jawa Timur pusat peradaban.
             </div>
             <div class="flex flex-col items-center justify-center gap-5 mt-6 md:flex-row">
                 <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('dashboard') }}">Home
                 </a>
+                @if (Auth::user()->role == 'admin')
                 <a class="inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white transition-all rounded-md shadow-xl sm:w-auto border border-white hover:bg-white hover:text-black hover:shadow-2xl"
                     href="{{ route('createwisata.tambahwisatajawatimur') }}">Tambah Wisata
                 </a>
+                @endif
             </div>
         </div>
     </div>
@@ -153,7 +156,7 @@
   
   <div class="container mx-auto py-10 px-6">
       <div id="searchResults" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          @foreach($jawatimurs as $jawatimur)
+          @forelse($jawatimurs as $jawatimur)
           <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
               <div class="relative">
                   <img class="w-full h-60 object-cover rounded-lg" src="{{ $jawatimur->image }}">
@@ -163,7 +166,9 @@
                   <p class="text-gray-700 text-base">{{ $jawatimur->keterangan }}</p>
               </div>
           </div>
-          @endforeach
+          @empty
+          <p class="text-gray-600">Tidak ada wisata yang ditemukan.</p>
+          @endforelse
       </div>
   </div>
   

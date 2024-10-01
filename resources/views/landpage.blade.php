@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite('resources/css/app.css')
   <title>Indonesia Travel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body >
 <!-- Navbar -->
 <section class="w-full px-8 text-gray-700 bg-white">
     <div class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
@@ -134,7 +135,7 @@
 <h1 class="text-4xl pt-10 ml-32 font-semibold">Destination Highlight</h1>
 <div class="flex flex-wrap justify-center pb-28 gap-8 p-8">
     <div class="relative w-56 h-56 bg-white shadow-lg rounded-lg overflow-hidden group">
-        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src="https://idetrips.com/wp-content/uploads/2018/07/Monas-jakarta-tourism-go-id.jpg" alt="Monas">
+        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src="https://hariliburnasional.com/wp-content/uploads/2018/04/Monas.jpg" alt="Monas">
         <div class="absolute inset-0 transition-opacity duration-300 ease-in-out"></div>
         <div class="absolute bottom-0 left-0 right-0 text-center p-2">
             <p class="text-white text-lg font-semibold">Monas</p>

@@ -11,6 +11,8 @@ class JawaYogyakartaController extends Controller
     public function addyogya(Request $request) {
         $request->validate([
             'nama' => ['required'],
+            'rating' => ['required'],
+            'lokasi' => ['required'],
             'keterangan' => ['required'],
             'image' => ['required'],
         ]);
@@ -20,6 +22,8 @@ class JawaYogyakartaController extends Controller
         JawaYogyakarta::create([
             'user_id' => Auth::id(),
             'nama' => $request->nama,
+            'rating' => $request->rating,
+            'lokasi' => $request->lokasi,
             'keterangan' => $request->keterangan,
             'image' => $imagePath
         ]);

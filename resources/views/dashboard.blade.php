@@ -485,6 +485,8 @@
     </div>
 </div>
 
+<x-footer />
+
 <script src="javascript/typ.js"></script>
 
 </body>

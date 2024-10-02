@@ -304,7 +304,7 @@
         </div>
 
         <div>
-            <p class="text-base font-bold tracking-wide text-white mt-4">Contacts</p>
+            <p class="text-base font-bold tracking-wide text-white">Contacts</p>
             <div class="flex text-white">
                 <p class="mr-1 ">Email:</p>
                 <a href="#" title="send email">admin@indonesiatravel.com</a>

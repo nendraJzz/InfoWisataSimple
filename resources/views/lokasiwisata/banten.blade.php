@@ -140,9 +140,10 @@
           </dialog>
           {{-- End --}}
       
-          <h1 class="flex text-blue-600 uppercase justify-center text-4xl font-semibold mt-28">
-            Temukan Wisata Impian
-        </h1>
+          <h1 class="flex items-center justify-center text-blue-600 uppercase text-4xl font-semibold text-center mt-24">
+            Hello, {{ Auth::user()->name }}! <br> Sudah Siap Berwisata? Mulai Pencarianmu!
+          </h1>
+        
         <div class="flex justify-center mt-10">
           <form id="searchForm" class="flex items-center w-full max-w-lg">
               <input 
@@ -171,7 +172,7 @@
                       <h3 class="text-xl mb-2 font-semibold">{{ $banten->nama }}</h3>
                       <p class="text-gray-700 text-base">{{ $banten->keterangan }}</p>
                       <p class="text-gray-700 mt-4 text-base">{{ $banten->rating }}</p>
-                      <p class="text-gray-700 text-sm">*Places to visit: {{ $banten->lokasi }}</p>
+                      <p class="text-gray-700 text-sm"><span class="font-semibold">*Places to visit: </span> {{ $banten->lokasi }}</p>
                   </div>
               </div>
               @empty
@@ -209,7 +210,7 @@
                                               <h3 class="text-xl mb-2 font-semibold">${banten.nama}</h3>
                                               <p class="text-gray-700 text-base">${banten.keterangan}</p>
                                               <p class="text-gray-700 mt-4 text-base">${banten.rating}</p>
-                                              <p class="text-gray-700 text-sm">*Places to visit: ${banten.lokasi}</p>
+                                              <p class="text-gray-700 text-sm"><span class="font-semibold">*Places to visit: </span> ${banten.lokasi}</p>
                                               
                                           </div>
                                       </div>
@@ -226,7 +227,7 @@
       </script>
       
         
-
+      <x-footer />
 
 
 

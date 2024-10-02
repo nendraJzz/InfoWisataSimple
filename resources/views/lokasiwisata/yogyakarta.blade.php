@@ -134,9 +134,9 @@
           </dialog>
           {{-- End --}}
       
-    <h1 class="flex text-blue-600 uppercase justify-center text-4xl font-semibold mt-28">
-        Temukan Wisata Impian
-    </h1>
+          <h1 class="flex items-center justify-center text-blue-600 uppercase text-4xl font-semibold text-center mt-24">
+            Hello, {{ Auth::user()->name }}! <br> Sudah Siap Berwisata? Mulai Pencarianmu!
+          </h1>
     <div class="flex justify-center mt-10">
       <form id="searchForm" class="flex items-center w-full max-w-lg">
           <input 
@@ -158,13 +158,15 @@
   <div class="container mx-auto py-10 px-6">
       <div id="searchResults" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           @forelse($yogyakartas as $yogyakarta)
-          <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+          <div class="max-w-xs mx-auto  bg-white shadow-lg overflow-hidden rounded-lg">
               <div class="relative">
                   <img class="w-full h-60 object-cover rounded-lg" src="{{ $yogyakarta->image }}">
               </div>
               <div class="p-4">
                   <h3 class="text-xl mb-2 font-semibold">{{ $yogyakarta->nama }}</h3>
                   <p class="text-gray-700 text-base">{{ $yogyakarta->keterangan }}</p>
+                  <p class="text-gray-700 mt-4 text-base">{{ $yogyakarta->rating }}</p>
+                  <p class="text-gray-700 text-sm"><span class="font-semibold">*Places to visit: </span> {{ $yogyakarta->lokasi }}</p>
               </div>
           </div>
           @empty
@@ -194,13 +196,15 @@
                       if (response.yogyakartas && response.yogyakartas.length > 0) {
                           response.yogyakartas.forEach(function(yogyakarta) {
                               $('#searchResults').append(`
-                                  <div class="max-w-xs mx-auto overflow-hidden rounded-lg">
+                                  <div class="max-w-xs mx-auto bg-white shadow-lg overflow-hidden rounded-lg">
                                       <div class="relative">
                                           <img class="w-full h-60 object-cover rounded-lg" src="${yogyakarta.image}">
                                       </div>
                                       <div class="p-4">
                                           <h3 class="text-xl mb-2 font-semibold">${yogyakarta.nama}</h3>
                                           <p class="text-gray-700 text-base">${yogyakarta.keterangan}</p>
+                                          <p class="text-gray-700 mt-4 text-base">${yogyakarta.rating}</p>
+                                          <p class="text-gray-700 text-sm"><span class="font-semibold">*Places to visit: </span> ${yogyakarta.lokasi}</p>
                                       </div>
                                   </div>
                               `);
@@ -217,6 +221,8 @@
           });
       });
   </script>
+
+<x-footer />
   
 </body>
 </html>

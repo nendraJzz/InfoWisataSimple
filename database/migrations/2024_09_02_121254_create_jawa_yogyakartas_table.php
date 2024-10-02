@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('jawa_yogyakartas', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->string('rating');
+            $table->string('lokasi');
             $table->text('keterangan');
             $table->string('image');
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');

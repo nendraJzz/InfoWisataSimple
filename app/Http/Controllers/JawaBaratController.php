@@ -11,6 +11,8 @@ class JawaBaratController extends Controller
     public function addjabar(Request $request) {
         $request->validate([
             'nama' => ['required'],
+            'rating' => ['required'],
+            'lokasi' => ['required'],
             'keterangan' => ['required'],
             'image' => ['required'],
         ]);
@@ -20,6 +22,8 @@ class JawaBaratController extends Controller
         JawaBarat::create([
             'user_id' => Auth::id(),
             'nama' => $request->nama,
+            'rating' => $request->rating,
+            'lokasi' => $request->lokasi,
             'keterangan' => $request->keterangan,
             'image' => $imagePath
         ]);

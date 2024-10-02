@@ -11,6 +11,8 @@ class JawaTimurController extends Controller
     public function addjatim(Request $request) {
         $request->validate([
             'nama' => ['required'],
+            'rating' => ['required'],
+            'lokasi' => ['required'],
             'keterangan' => ['required'],
             'image' => ['required'],
         ]);
@@ -20,6 +22,8 @@ class JawaTimurController extends Controller
         JawaTimur::create([
             'user_id' => Auth::id(),
             'nama' => $request->nama,
+            'rating' => $request->rating,
+            'lokasi' => $request->lokasi,
             'keterangan' => $request->keterangan,
             'image' => $imagePath
         ]);

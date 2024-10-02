@@ -29,6 +29,20 @@
                     </div>
                     <div class="mb-5">
                         <label for="phone" class="mb-3 block text-base font-medium text-[#07074D]">
+                            Rating Wisata
+                        </label>
+                        <input type="text" id="phone" name="rating" placeholder="Masukan Rating Wisata"
+                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-600 focus:shadow-md" />
+                    </div>
+                    <div class="mb-5">
+                        <label for="phone" class="mb-3 block text-base font-medium text-[#07074D]">
+                            Lokasi Wisata
+                        </label>
+                        <input type="text" id="phone" name="lokasi" placeholder="Masukan Lokasi Wisata"
+                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-600 focus:shadow-md" />
+                    </div>
+                    <div class="mb-5">
+                        <label for="phone" class="mb-3 block text-base font-medium text-[#07074D]">
                             Masukan Gambar Wisata
                         </label>
                         <input type="file" class="file-input file-input-bordered w-full max-w-xs" accept="jpg.jpeg.image/png.image/jpeg" name="image" />
